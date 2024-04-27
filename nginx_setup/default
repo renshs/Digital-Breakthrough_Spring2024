@@ -1,0 +1,12 @@
+upstream vkcloud {
+     server 90.156.218.114:8000;
+     server 90.156.216.119:8000;
+}
+
+ server {
+      listen 80;
+      server_name <SecondartIP1>;
+      location / {
+          proxy_pass http://vkcloud;
+       }
+ }
