@@ -1,0 +1,16 @@
+{% load static %}
+
+
+<div class="row">
+    <div class="col-2"></div>
+    {% for i in id %}
+    <div class="col-4 m-3">
+        <img 
+                src="{% static i %}" 
+                class="card-img-top" 
+                alt="..."
+                height="300">
+    </div>
+
+    {% endfor %}
+</div>

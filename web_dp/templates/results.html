@@ -1,0 +1,58 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="col"
+    <div class="col-10">
+        <!-- {{zipped}} -->
+        {% load static %}
+
+
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-4 m-3">
+                <img 
+                        src="static/score1.png" 
+                         
+                        alt="..."
+                        height="400">
+            </div>
+            <div class="col-4 m-3">
+                <img 
+                        src="static/dis.png" 
+                        
+                        alt="..."
+                        height="400">
+            </div>
+        </div>
+        {% if flag %}
+        {% for id, table_item, score in zipped %}
+        
+        <div class="p-3 m-3 rounded-3 border border-secondary" style="background-color: #F8F9FA">
+            <h1>{{score}}</h1>
+            <div class="row">
+                {% include 'layouts/chart.html'%}
+            </div>
+            <div>
+                {% include 'layouts/res_table.html'%}
+            </div>
+        </div>
+
+        <!-- </div> -->
+
+        {% endfor %}
+        {% else %}
+        {% for id, table_item, score in zipped %}
+        
+        <div class="p-3 m-3 rounded-3 border border-secondary" style="background-color: #F8F9FA">
+            <h1>{{score}}</h1>
+            {% include 'layouts/res_table.html'%}
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+ 
+</div>
+
+    {% endblock %}

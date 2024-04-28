@@ -1,0 +1,53 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-4">
+            {% include 'layouts/member.html' with filename='Yaroslav.png' name='Ярослав Николаев' role='Аналитик' %}
+        </div>
+        <div class="col-4">
+            {% include 'layouts/member.html' with filename='Kamil.jpg' name='Камиль Гараев' role='Аналитик' %}
+        </div>
+        <div class="col-4">
+            {% include 'layouts/member.html' with filename='Azamat.jpg' name='Азамат Усманов' role='Аналитик' %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+
+        <div class="col-4">
+            {% include 'layouts/member.html' with filename='Igor.jpg' name='Игорь Баянов' role='Аналитик' %}
+        </div>
+        <div class="col-4">
+            {% include 'layouts/member.html' with filename='Dmitry.jpg' name='Дмитрий Кошенков' role='WEB' %}
+        </div>
+
+
+    </div>
+    <div class="p-3 m-3 rounded-3" style="background-color: #F8F9FA">
+        <ul>
+            <li>
+                (ML) Leaders of Digital International competition (Цифровой прорыв.Международный этап) - 🥈 2nd place.
+                (autumn 2023) - Processing citizens' appeals (backend + frontend + NER model + three classification
+                models
+            </li>
+            <li>
+                (ML) Joint hackathon Sberbank and MIPT - 🥈 2nd place. (autumn 2023) - Image segmentation
+            </li>
+            <li>
+                (ML) Joint hackathon Sberbank and MIPT - 🥈 2nd place. (spring 2023) - Fraudulent audio detection
+            </li>
+            <li>
+                (ML) Цифровой прорыв окружной хакатон - ☑️ participant. (2022)
+            </li>
+            <li>
+                (Python development) DigitalStart (Python) - 🥇 Grand Prix. (2020)
+            </li>
+        </ul>
+    </div>
+
+
+
+
+{% endblock %}

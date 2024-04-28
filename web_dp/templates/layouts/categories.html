@@ -1,0 +1,54 @@
+{% load static %}
+
+<div class="rounded-3" style="background-color: #F8F9FA;">
+    <form method="post">
+        {% csrf_token %}
+        <ul style="list-style: none; ">
+            <li>
+                <input type="checkbox" id="all" name="categories" checked="True">
+                <label for="all">Все</label>
+            </li>
+            {% for category in categories %}
+                <li>
+                    <input type="checkbox" id="{{ category }}" name="categories" value="{{ category }}" checked="True">
+                    <label for="{{ category }}">{{ category }}</label>
+                </li>
+            {% endfor %}
+        </ul>
+    </form>    
+</div>
+
+<script>
+    document.getElementById('all').addEventListener('click', function () {
+        var checkboxes = document.getElementsByName('categories');
+        if (this.checked) {
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = true;
+            }
+        } else {
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = false;
+            }
+        }
+    });
+
+    // Add event listeners to individual checkboxes
+    var checkboxes = document.getElementsByName('categories');
+    for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].addEventListener('click', function () {
+            var allCheckbox = document.getElementById('all');
+            if (!this.checked) {
+                allCheckbox.checked = false;
+            } else {
+                var allChecked = true;
+                for (var j = 0; j < checkboxes.length; j++) {
+                    if (!checkboxes[j].checked) {
+                        allChecked = false;
+                        break;
+                    }
+                }
+                allCheckbox.checked = allChecked;
+            }
+        });
+    }
+</script>

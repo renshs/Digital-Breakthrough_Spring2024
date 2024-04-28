@@ -1,0 +1,25 @@
+{% load static %}
+
+
+<article class="card mb-3 w-100 mid-gray rounded-3" style="height: 220px;background-color: #F8F9FA">
+    <div class="row g-0 ">
+        <div class="col-5 p-2">
+            <div class="border mb-3 w-100">
+                <img
+                        src="{% static filename %}"
+                        class="img-fluid rounded-start" alt="..."/>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card-body">
+                <h5 class="card-title">
+                    {{ name }}
+                </h5>
+                <p class="card-text">
+                    {{ role }}
+                </p>
+            </div>
+        </div>
+    </div>
+</article>
