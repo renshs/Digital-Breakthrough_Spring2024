@@ -1,0 +1,15 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                {% include 'layouts/file_input.html' %}
+            </div>
+        </div>
+    </form>
+{% endblock %}

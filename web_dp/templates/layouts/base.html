@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="icon" href="{% static 'icon.png' %}">
+    <title>dp_team</title>
+    <link rel="stylesheet" href="../../static/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+</head>
+<body>
+<div>
+    {% include 'layouts/nav.html' %}
+    <main class="container-fluid container-lg mt-3">
+        <div class="row">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+    </main>
+</div>
+</body>
+</html>

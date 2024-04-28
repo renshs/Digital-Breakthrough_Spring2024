@@ -1,0 +1,24 @@
+{% load static %}
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Сообщения</th>
+      <th>Название кластера</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for clus, text in table_item %}
+    <tr>
+      <td>
+        {{ clus }}
+      </td>
+      <td>
+        {{ text }}
+      </td>
+      <td></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
